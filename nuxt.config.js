@@ -1,3 +1,9 @@
+let routerBase = '/'
+
+if (process.env.STAGING) {
+  routerBase = '/rise-up-3/'
+}
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -56,6 +62,10 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
   ],
+
+  router: {
+    base: routerBase,
+  },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},

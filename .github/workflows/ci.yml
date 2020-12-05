@@ -3,13 +3,10 @@ name: ci
 on:
   push:
     branches:
-      - master
-  pull_request:
-    branches:
-      - master
+      - develop
 
 jobs:
-  ci:
+  deploy-staging:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -45,3 +42,15 @@ jobs:
       - name: Run linter 👀
         run: yarn lint
 
+      - name: Generate static files 🔧
+        env:
+          STAGING: 1
+        run: yarn generate
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
+          CLEAN: true

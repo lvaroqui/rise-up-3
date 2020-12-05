@@ -9,5 +9,9 @@ module.exports = {
         coral: '#f0544f',
       },
     },
+    fontFamily: {
+      serif: ['"Cinzel"', 'serif'],
+      sans: ['"Poppins"', 'sans-serif'],
+    },
   },
 }

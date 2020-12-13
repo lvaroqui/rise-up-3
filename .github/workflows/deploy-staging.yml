@@ -20,8 +20,6 @@ jobs:
         uses: actions/checkout@master
         with:
           lfs: true
-      - name: Checkout LFS objects 🛎
-        run: git lfs checkout
 
       - name: Setup node env 🏗
         uses: actions/setup-node@v2.1.2
@@ -50,7 +48,7 @@ jobs:
       - name: Generate static files 🔧
         env:
           STAGING: 1
-        run: yarn generate
+        run: yarn generate-staging
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1

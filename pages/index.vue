@@ -15,7 +15,7 @@
           <h1 class="p-4">Rise Up : Qui sommes-nous ?</h1>
           <p>
             RISE UP est une association dédiée à la création de
-            <span class="bold">comédie musicale</span>
+            <span class="text-coral">comédie musicale</span>
             inter-écoles & universités parisiennes. Le projet rassemble
             <span class="bold"> des étudiants de tous horizons </span> (école de
             commerce, d'ingénieur, de cinéma, ...) et des
@@ -81,7 +81,7 @@ export default Vue.extend({
 }
 
 .bold {
-  @apply text-coral font-bold;
+  @apply font-bold;
 }
 
 .arrow {

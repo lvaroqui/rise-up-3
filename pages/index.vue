@@ -1,16 +1,28 @@
 <template>
   <div>
     <div class="first text-navy-blue">
-      <div class="container">
-        <div>
-          <img class="mx-auto" src="~/assets/svg/Logo.svg" width="800" />
-          <h1 class="text-2xl sm:text-4xl">Abordage imminent . . .</h1>
+      <div class="page">
+        <img class="mx-auto w-full max-w-2xl" src="~/assets/svg/Logo.svg" />
+        <h1 class="text-2xl sm:text-4xl">Abordage imminent . . .</h1>
+        <div class="flex justify-center mt-12 pb-4">
+          <a
+            href="https://www.facebook.com/LeRiseUp/"
+            class="flex-none w-1/3 sm:w-48"
+          >
+            <Facebook class="mr-5 md:mr-12 fill-current" />
+          </a>
+          <a
+            href="https://www.instagram.com/riseup_comedie_musicale/"
+            class="flex-none w-1/3 sm:w-48"
+          >
+            <Instagram class="ml-5 md:ml-12 fill-current" />
+          </a>
         </div>
-        <Arrow class="arrow" />
+        <Arrow class="arrow fill-current" width="100px" />
       </div>
     </div>
     <div class="bg-navy-blue">
-      <div class="container pt-6 pb-12">
+      <div class="page pt-6 pb-12">
         <div class="text-blue mx-4">
           <h1 class="p-4">Rise Up : Qui sommes-nous ?</h1>
           <p>
@@ -64,10 +76,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import Facebook from '~/assets/svg/Facebook.svg?inline'
+import Instagram from '~/assets/svg/Instagram.svg?inline'
 import Arrow from '~/assets/svg/Arrow.svg?inline'
 
 export default Vue.extend({
-  components: { Arrow },
+  components: { Facebook, Instagram, Arrow },
 })
 </script>
 
@@ -76,8 +90,8 @@ export default Vue.extend({
   @apply bg-gradient-to-tr from-blue to-white;
 }
 
-.container {
-  @apply min-h-screen flex justify-center text-center mx-auto;
+.page {
+  @apply min-h-screen text-center mx-auto;
 }
 
 .bold {
@@ -86,9 +100,12 @@ export default Vue.extend({
 
 .arrow {
   position: absolute;
-  bottom: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 0.5em;
   animation: bounce 1s alternate infinite;
-  @apply fill-current;
 }
 
 @keyframes bounce {

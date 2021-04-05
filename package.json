@@ -15,7 +15,7 @@
     "*.{js,vue}": "eslint"
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "^2.0.0",
+    "@nuxt/typescript-runtime": "^2.1.0",
     "@nuxtjs/axios": "^5.12.4",
     "core-js": "^3.8.1",
     "nuxt": "^2.15.4"

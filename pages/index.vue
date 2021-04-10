@@ -1,5 +1,5 @@
 <template>
-  <div class="main bg-navy-blue">
+  <div class="bg-navy-blue">
     <div class="fixed w-full md:hidden z-10">
       <div class="bg-navy-blue-darker bg-opacity-90 text-white flex">
         <div
@@ -20,7 +20,7 @@
           v-for="entry in navEntries"
           :key="entry.name"
           :href="entry.href"
-          class="ml-3 py-3 text-xl"
+          class="ml-3 py-3 text-xl font-bold"
           @click="navOpen = false"
         >
           {{ entry.text }}
@@ -34,20 +34,27 @@
         v-for="(entry, index) in navEntries"
         :key="entry.text"
         :href="entry.href"
-        :class="[index != 0 ? `translate-y-16` : '']"
-        class="transform -rotate-90 origin-bottom h-16 flex justify-center flex-col w-32 transition-colors duration-300 bg-opacity-0 cursor-pointer bg-blue hover:bg-opacity-25"
+        :class="[
+          index != 0 ? `mt-16` : '',
+          entry.active ? 'bg-opacity-25' : 'bg-opacity-0 ',
+        ]"
+        class="transform -rotate-90 origin-bottom h-16 flex justify-center flex-col w-32 transition-colors duration-300 cursor-pointer bg-blue"
       >
         <div>{{ entry.text }}</div>
       </a>
     </div>
-    <div class="min-h-screen">
+    <div id="home" ref="home" class="min-h-screen">
       <Arrow
         class="arrow animate-bounce text-white fill-current"
         width="100px"
       />
     </div>
-    <div id="histoire" class="min-h-screen pt-16 pb-16 pl-0 md:pl-16">
-      <div class="px-8 md:px-16 ml-0 max-w-4xl">
+    <div class="min-h-screen pb-16 pl-0 md:pl-16">
+      <div
+        id="histoire"
+        ref="histoire"
+        class="pt-16 px-8 md:px-16 ml-0 max-w-4xl"
+      >
         <h1 class="font-serif text-sand text-4xl md:text-5xl ml-4">
           Embarquez pour nassau
         </h1>
@@ -68,28 +75,33 @@
           pariatur. Excepteur sint occaecat cupidatat non proident.
         </p>
       </div>
-      <div class="bg-coral h-64 mt-16"></div>
-      <div id="asso" class="px-8 md:px-16 pt-16 ml-auto mr-0 max-w-4xl">
-        <h1 class="font-serif text-sand text-4xl md:text-5xl mr-4 text-right">
-          L'équipe
-        </h1>
-        <p class="mt-4 text-white text md:text-right">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident.
-          <br />
-          <br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident.
-        </p>
+      <div id="asso" ref="asso" class="pt-16">
+        <div class="bg-coral h-64"></div>
+        <div class="px-8 md:px-16 pt-16 ml-auto mr-0 max-w-4xl">
+          <h1 class="font-serif text-sand text-4xl md:text-5xl mr-4 text-right">
+            L'équipe
+          </h1>
+          <p class="mt-4 text-white text md:text-right">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident.
+            <br />
+            <br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident.
+          </p>
+        </div>
       </div>
+    </div>
+    <div class="h-64 pl-0 md:pl-16 mt-16 bg-navy-blue-darker text-white">
+      FOOTER
     </div>
   </div>
 </template>
@@ -97,6 +109,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import Arrow from '~/assets/svg/Arrow.svg?inline'
+import { debounce } from '~/utils'
 
 export default Vue.extend({
   components: { Arrow },
@@ -104,10 +117,58 @@ export default Vue.extend({
     return {
       navOpen: false,
       navEntries: [
-        { text: "L'Histoire", href: '#histoire' },
-        { text: "L'asso", href: '#asso', class: 'translate-y-16' },
+        { text: 'Accueil', href: '#home', active: false },
+        { text: "L'Histoire", href: '#histoire', active: false },
+        { text: "L'asso", href: '#asso', active: false },
       ],
+      observer: null as IntersectionObserver | null,
     }
+  },
+  mounted() {
+    this.observe()
+    window.addEventListener(
+      'resize',
+      debounce(() => {
+        this.observe()
+      }, 500)
+    )
+  },
+  methods: {
+    observerCallback(
+      entries: IntersectionObserverEntry[],
+      _: IntersectionObserver
+    ) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const name = entry.target.getAttribute('id')!
+          this.navEntries.forEach((navEntry) => {
+            navEntry.active = false
+            if (navEntry.href.substring(1) === name) {
+              navEntry.active = true
+            }
+          })
+        }
+      })
+    },
+    observe() {
+      const observed = [
+        this.$refs.home as Element,
+        this.$refs.histoire as Element,
+        this.$refs.asso as Element,
+      ]
+      if (this.observer) {
+        observed.forEach((elem) => {
+          this.observer!.unobserve(elem)
+        })
+      }
+      const y = Math.round(window.innerHeight * 0.7)
+      this.observer = new IntersectionObserver(this.observerCallback, {
+        rootMargin: `-${window.innerHeight - y - 1}px 0px -${y}px 0px`,
+      })
+      observed.forEach((elem) => {
+        this.observer!.observe(elem)
+      })
+    },
   },
 })
 </script>

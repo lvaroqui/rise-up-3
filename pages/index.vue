@@ -1,74 +1,75 @@
 <template>
-  <div>
-    <div class="first text-navy-blue">
-      <div class="page">
-        <img class="mx-auto w-full max-w-2xl" src="~/assets/svg/Logo.svg" />
-        <h1 class="text-2xl sm:text-4xl">Abordage imminent . . .</h1>
-        <div class="flex justify-center mt-12 pb-4">
-          <a
-            href="https://www.facebook.com/LeRiseUp/"
-            class="flex-none w-1/3 sm:w-48"
-          >
-            <Facebook class="mr-5 md:mr-12 fill-current" />
-          </a>
-          <a
-            href="https://www.instagram.com/riseup_comedie_musicale/"
-            class="flex-none w-1/3 sm:w-48"
-          >
-            <Instagram class="ml-5 md:ml-12 fill-current" />
-          </a>
-        </div>
-        <Arrow class="arrow fill-current" width="100px" />
-      </div>
+  <div class="main bg-navy-blue">
+    <div
+      class="fixed w-full md:hidden h-10 bg-navy-blue-darker text-white fill-current bg-opacity-75"
+    >
+      <button @click="navOpen = !navOpen">{{ navOpen }}</button>
     </div>
-    <div class="bg-navy-blue">
-      <div class="page pt-6 pb-12">
-        <div class="text-blue mx-4">
-          <h1 class="p-4">Rise Up : Qui sommes-nous ?</h1>
-          <p>
-            RISE UP est une association dédiée à la création de
-            <span class="text-coral">comédie musicale</span>
-            inter-écoles & universités parisiennes. Le projet rassemble
-            <span class="bold"> des étudiants de tous horizons </span> (école de
-            commerce, d'ingénieur, de cinéma, ...) et des
-            <span class="bold">jeunes actifs passionnés</span>
-            par le monde de la comédie musicale.
-          </p>
-          <img
-            src="~/assets/img/team.jpg"
-            class="max-w-full lg:max-w-4xl mx-auto m-4 shadow-xl"
-          />
-          <h2 class="p-4">Une équipe organisée</h2>
-          <h3 class="pb-2">Troupe</h3>
-          <p>
-            On y compte les solistes, les
-            <span class="bold">instrumentistes</span>, les
-            <span class="bold">choristes</span> et les
-            <span class="bold">danseurs</span>. Ce sont eux qui incarnent le
-            spectacle et que vous verrez sur scène.
-          </p>
-          <h3 class="p-2">Direction Artistique</h3>
-          <p>
-            On leur doit la <span class="bold">création</span> et la
-            <span class="bold">réalisation</span>. Non seulement ils ont tout
-            créé, mais en plus ils
-            <span class="bold">dirigent la troupe</span> et lui permettent
-            d'exprimer tout son potentiel.
-          </p>
-          <h3 class="p-2">Organisation</h3>
-          <p>
-            Le <span class="bold">bureau</span>, la
-            <span class="bold">communication</span>, la
-            <span class="bold">logistique</span>, les
-            <span class="bold">sponsors</span>. L'équipe de l'ombre qui s'occupe
-            du "pourquoi" et du "comment".
-          </p>
-          <h3 class="p-2">Direction Technique</h3>
-          <p>
-            C'est simple, <span class="bold">sans eux</span>,
-            <span class="bold">pas de spectacle</span>.
-          </p>
-        </div>
+    <div
+      class="hidden md:block text-xl fixed h-full text-center bg-navy-blue-darker text-blue bg-opacity-75 w-16"
+    >
+      <a
+        href="#histoire"
+        class="transform -rotate-90 origin-bottom h-16 flex justify-center flex-col w-32 transition-colors duration-300 bg-opacity-0 cursor-pointer bg-blue hover:bg-opacity-25"
+      >
+        <div>L'histoire</div>
+      </a>
+      <a
+        href="#asso"
+        class="transform -rotate-90 origin-bottom h-16 flex justify-center flex-col w-32 transition-colors duration-300 bg-opacity-0 cursor-pointer bg-blue translate-y-16 hover:bg-opacity-25"
+      >
+        <div>L'asso</div>
+      </a>
+    </div>
+    <div class="min-h-screen">
+      <Arrow
+        class="arrow animate-bounce text-white fill-current"
+        width="100px"
+      />
+    </div>
+    <div id="histoire" class="min-h-screen pt-16 pb-16 pl-0 md:pl-16">
+      <div class="px-8 md:px-16 ml-0 max-w-4xl">
+        <h1 class="font-serif text-sand text-4xl md:text-5xl ml-4">
+          Embarquez pour nassau
+        </h1>
+        <p class="mt-4 text-white">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident.
+          <br />
+          <br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident.
+        </p>
+      </div>
+      <div class="bg-coral h-64 mt-16"></div>
+      <div id="asso" class="px-8 md:px-16 pt-16 ml-auto mr-0 max-w-4xl">
+        <h1 class="font-serif text-sand text-4xl md:text-5xl mr-4 text-right">
+          L'équipe
+        </h1>
+        <p class="mt-4 text-white text md:text-right">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident.
+          <br />
+          <br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident.
+        </p>
       </div>
     </div>
   </div>
@@ -76,28 +77,19 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Facebook from '~/assets/svg/Facebook.svg?inline'
-import Instagram from '~/assets/svg/Instagram.svg?inline'
 import Arrow from '~/assets/svg/Arrow.svg?inline'
 
 export default Vue.extend({
-  components: { Facebook, Instagram, Arrow },
+  components: { Arrow },
+  data() {
+    return {
+      navOpen: false,
+    }
+  },
 })
 </script>
 
 <style lang="postcss" scoped>
-.first {
-  @apply bg-gradient-to-tr from-blue to-white;
-}
-
-.page {
-  @apply min-h-screen text-center mx-auto;
-}
-
-.bold {
-  @apply font-bold;
-}
-
 .arrow {
   position: absolute;
   margin-left: auto;
@@ -105,15 +97,5 @@ export default Vue.extend({
   left: 0;
   right: 0;
   bottom: 0.5em;
-  animation: bounce 1s alternate infinite;
-}
-
-@keyframes bounce {
-  from {
-    transform: translateY(0) rotate(0.1deg);
-  }
-  to {
-    transform: translateY(-20px);
-  }
 }
 </style>

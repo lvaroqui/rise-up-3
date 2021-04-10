@@ -1,9 +1,31 @@
 <template>
   <div class="main bg-navy-blue">
-    <div
-      class="fixed w-full md:hidden h-10 bg-navy-blue-darker text-white fill-current bg-opacity-75"
-    >
-      <button @click="navOpen = !navOpen">{{ navOpen }}</button>
+    <div class="fixed w-full md:hidden z-10">
+      <div class="bg-navy-blue-darker bg-opacity-90 text-white flex">
+        <div
+          class="py-3 ml-3 nav-burger"
+          :class="{ 'nav-active': navOpen }"
+          @click="navOpen = !navOpen"
+        >
+          <div class="nav-burger-1" />
+          <div class="nav-burger-2" />
+          <div class="nav-burger-3" />
+        </div>
+      </div>
+      <div
+        class="bg-blue bg-opacity-90 flex flex-col transition-all duration-300 transform"
+        :class="navOpen ? '' : 'opacity-0'"
+      >
+        <a
+          v-for="entry in navEntries"
+          :key="entry.name"
+          :href="entry.href"
+          class="ml-3 py-3 text-xl"
+          @click="navOpen = false"
+        >
+          {{ entry.text }}
+        </a>
+      </div>
     </div>
     <div
       class="hidden md:block text-xl fixed h-full text-center bg-navy-blue-darker text-blue bg-opacity-75 w-16"
@@ -98,5 +120,30 @@ export default Vue.extend({
   left: 0;
   right: 0;
   bottom: 0.5em;
+}
+
+.nav-burger {
+  cursor: pointer;
+  &.nav-active {
+    .nav-burger-1 {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .nav-burger-2 {
+      opacity: 0;
+    }
+    .nav-burger-3 {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+}
+
+.nav-burger div {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  border: white 1px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
 }
 </style>

@@ -9,16 +9,13 @@
       class="hidden md:block text-xl fixed h-full text-center bg-navy-blue-darker text-blue bg-opacity-75 w-16"
     >
       <a
-        href="#histoire"
+        v-for="(entry, index) in navEntries"
+        :key="entry.text"
+        :href="entry.href"
+        :class="[index != 0 ? `translate-y-16` : '']"
         class="transform -rotate-90 origin-bottom h-16 flex justify-center flex-col w-32 transition-colors duration-300 bg-opacity-0 cursor-pointer bg-blue hover:bg-opacity-25"
       >
-        <div>L'histoire</div>
-      </a>
-      <a
-        href="#asso"
-        class="transform -rotate-90 origin-bottom h-16 flex justify-center flex-col w-32 transition-colors duration-300 bg-opacity-0 cursor-pointer bg-blue translate-y-16 hover:bg-opacity-25"
-      >
-        <div>L'asso</div>
+        <div>{{ entry.text }}</div>
       </a>
     </div>
     <div class="min-h-screen">
@@ -84,6 +81,10 @@ export default Vue.extend({
   data() {
     return {
       navOpen: false,
+      navEntries: [
+        { text: "L'Histoire", href: '#histoire' },
+        { text: "L'asso", href: '#asso', class: 'translate-y-16' },
+      ],
     }
   },
 })

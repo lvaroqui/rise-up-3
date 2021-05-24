@@ -59,20 +59,24 @@
           Embarquez pour nassau
         </h1>
         <p class="mt-4 text-white">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident.
+          <span class="ml-4" />Depuis dix ans, se tient à Nassau, sur l’île de
+          New Providence, une république indépendante tenue par les pirates les
+          plus terrifiants des Caraïbes. L’empire Britannique, bien décidé à
+          reprendre le contrôle sur ces mers, organise un blocus complet de
+          l’île et propose un ultimatum aux habitants: ils ont une nuit pour
+          accepter un pardon royal et rejoindre les rangs de la couronne, ou ils
+          mourront le lendemain.
           <br />
           <br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident.
+          <span class="ml-4" />Chaque pirate encore présent doit prendre
+          position et très vite le chaos règne à Nassau.
+          <br />
+          <br />
+          <span class="ml-4" />Tout juste arrivée sur place, Mary Read se
+          déguise en homme pour cacher son identité et fait la rencontre d’Anne
+          Bonny, une jeune pirate tout feu tout flamme. Ensemble, elles vont
+          tenter de survivre et trouver leur place dans un nouveau monde alors
+          que l’âge d’or de la piraterie prend fin sous leurs yeux.
         </p>
       </div>
       <div id="asso" ref="asso" class="pt-16">
@@ -82,20 +86,25 @@
             L'équipe
           </h1>
           <p class="mt-4 text-white text md:text-right">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident.
+            <span class="ml-4 md:ml-0" />Rise-Up, le réseau inter-écoles des
+            spectacles étudiants des universités de Paris, rassemble des
+            étudiants parisiens de tous horizons autour d’un projet artistique
+            ambitieux : monter une comédie musicale entièrement originale,
+            accompagnée par un orchestre symphonique.
             <br />
             <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident.
+            <span class="ml-4 md:ml-0" />Composition des musiques, écriture du
+            script, création des chorégraphies, fabrication des décors et
+            costumes, gestion de la lumière et du son… le spectacle se veut
+            exploiter les nombreux talents qui se cachent parmi les étudiants.
+            <br />
+            <br />
+            <span class="ml-4 md:ml-0" />Rise-Up a la volonté de promouvoir la
+            culture au sein du milieu étudiant, mais également l’envie de créer,
+            de se dépasser, d’avancer ensemble sur des projets ambitieux même en
+            cette période difficile. Cette année, ce sont plus de 80 personnes
+            qui font partie de ce projet et qui joueront en septembre 2021 au
+            théâtre André Malraux (Rueil Malmaison).
           </p>
         </div>
       </div>

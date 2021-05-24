@@ -109,8 +109,10 @@
         </div>
       </div>
     </div>
-    <div class="h-64 pl-0 md:pl-16 mt-16 bg-navy-blue-darker text-white">
-      FOOTER
+    <div class="pl-0 md:pl-16 mt-16 bg-navy-blue-darker text-white">
+      <div class="container mx-auto text-center py-10">
+        <nuxt-link class="text-2xl" to="/legal">Mentions légales</nuxt-link>
+      </div>
     </div>
   </div>
 </template>

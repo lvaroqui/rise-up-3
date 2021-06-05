@@ -1,5 +1,6 @@
 <template>
   <div class="bg-navy-blue">
+    <!-- Nav -->
     <div class="fixed w-full md:hidden z-10">
       <div class="bg-navy-blue-darker bg-opacity-90 text-white flex">
         <div
@@ -43,12 +44,20 @@
         <div>{{ entry.text }}</div>
       </a>
     </div>
+    <!-- End Nav -->
+
     <div id="home" ref="home" class="min-h-screen">
+      <div class="w-full min-h-screen md:ml-16 relative">
+        <Title class="title" />
+        <Ladder class="ladder" />
+        <Rope1 class="rope1" />
+      </div>
       <Arrow
         class="arrow animate-bounce text-white fill-current"
         width="100px"
       />
     </div>
+
     <div class="min-h-screen pb-16 pl-0 md:pl-16">
       <div
         id="histoire"
@@ -120,10 +129,14 @@
 <script lang="ts">
 import Vue from 'vue'
 import Arrow from '~/assets/svg/Arrow.svg?inline'
+import Title from '~/assets/svg/Title.svg?inline'
+import Ladder from '~/assets/svg/Ladder.svg?inline'
+import Rope1 from '~/assets/svg/Rope1.svg?inline'
+
 import { debounce } from '~/utils'
 
 export default Vue.extend({
-  components: { Arrow },
+  components: { Arrow, Title, Ladder, Rope1 },
   data() {
     return {
       navOpen: false,
@@ -192,6 +205,42 @@ export default Vue.extend({
   left: 0;
   right: 0;
   bottom: 0.5em;
+}
+
+.title {
+  @apply max-w-2xl absolute;
+  top: 35%;
+  @screen md {
+    top: 30%;
+    left: 10%;
+  }
+}
+
+.ladder {
+  @apply absolute;
+  top: -35%;
+  left: 55%;
+  width: 80%;
+  @screen md {
+    top: -30%;
+    left: 60%;
+    width: 55%;
+  }
+}
+
+.rope1 {
+  @apply absolute;
+  top: -10%;
+  left: -10%;
+  width: 80%;
+  @screen sm {
+    top: -15%;
+  }
+  @screen md {
+    top: -50%;
+    left: 0;
+    width: 70%;
+  }
 }
 
 .nav-burger {

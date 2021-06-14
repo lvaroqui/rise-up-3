@@ -1,5 +1,6 @@
 <template>
   <div class="bg-navy-blue">
+    <!-- Nav -->
     <div class="fixed w-full md:hidden z-10">
       <div class="bg-navy-blue-darker bg-opacity-90 text-white flex">
         <div
@@ -43,12 +44,29 @@
         <div>{{ entry.text }}</div>
       </a>
     </div>
+    <!-- End Nav -->
+
     <div id="home" ref="home" class="min-h-screen">
+      <div class="flex flex-col h-screen md:ml-16">
+        <div class="flex-grow" />
+        <div class="max-w-3xl mx-auto mb-6">
+          <Title />
+        </div>
+        <div class="max-w-3xl mx-auto text-sand text-center">
+          <p class="text-3xl font-serif my-3">Les 17 et 18 septembre</p>
+          <p class="text-4xl font-serif my-3">Au Théatre André Malraux</p>
+        </div>
+        <div class="flex-grow" />
+      </div>
+      <div class="ladder opacity-0 lg:opacity-100">
+        <Ladder class="h-full" />
+      </div>
       <Arrow
         class="arrow animate-bounce text-white fill-current"
         width="100px"
       />
     </div>
+
     <div class="min-h-screen pb-16 pl-0 md:pl-16">
       <div
         id="histoire"
@@ -120,10 +138,14 @@
 <script lang="ts">
 import Vue from 'vue'
 import Arrow from '~/assets/svg/Arrow.svg?inline'
+import Title from '~/assets/svg/Title.svg?inline'
+import Ladder from '~/assets/svg/Ladder.svg?inline'
+import Rope1 from '~/assets/svg/Rope1.svg?inline'
+
 import { debounce } from '~/utils'
 
 export default Vue.extend({
-  components: { Arrow },
+  components: { Arrow, Title, Ladder, Rope1 },
   data() {
     return {
       navOpen: false,
@@ -185,6 +207,13 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss" scoped>
+.ladder {
+  position: absolute;
+  left: 77%;
+  height: 100vh;
+  bottom: 10%;
+}
+
 .arrow {
   position: absolute;
   margin-left: auto;

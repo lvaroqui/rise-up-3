@@ -14,14 +14,14 @@
         </div>
       </div>
       <div
-        class="bg-blue bg-opacity-90 flex flex-col transition-all duration-300 transform"
+        class="bg-white font-serif bg-opacity-90 flex flex-col transition-all duration-300 transform"
         :class="navOpen ? '' : 'opacity-0'"
       >
         <a
           v-for="entry in navEntries"
           :key="entry.name"
           :href="entry.href"
-          class="ml-3 py-3 text-xl font-bold"
+          class="ml-3 py-3 text-2xl font-bold"
           @click="navOpen = false"
         >
           {{ entry.text }}
@@ -29,7 +29,7 @@
       </div>
     </div>
     <div
-      class="hidden md:block text-xl fixed h-full text-center bg-navy-blue-darker text-blue bg-opacity-75 w-16"
+      class="hidden md:block text-xl fixed h-full text-center bg-navy-blue-darker text-blue bg-opacity-75 w-16 z-10"
     >
       <a
         v-for="(entry, index) in navEntries"
@@ -52,14 +52,30 @@
         <div class="max-w-3xl mx-auto mb-6">
           <Title />
         </div>
-        <div class="max-w-3xl mx-auto text-sand text-center">
-          <p class="text-3xl font-serif my-3">Les 17 et 18 septembre</p>
-          <p class="text-4xl font-serif my-3">Au Théatre André Malraux</p>
+        <div class="max-w-3xl mx-auto text-white text-center">
+          <p class="text-2xl md:text-3xl font-serif my-3">
+            Les 17 et 18 septembre 2021 à 20h
+          </p>
+          <p class="text-2xl md:text-4xl font-serif my-3">
+            Au Théatre André Malraux
+          </p>
         </div>
         <div class="flex-grow" />
       </div>
       <div class="ladder opacity-0 lg:opacity-100">
         <Ladder class="h-full" />
+      </div>
+      <div class="rope1">
+        <Rope1 class="h-full" />
+      </div>
+      <div class="rope2">
+        <Rope2 class="h-full" />
+      </div>
+      <div class="rope3">
+        <Rope3 class="h-full" />
+      </div>
+      <div class="rope4">
+        <Rope4 class="h-full" />
       </div>
       <Arrow
         class="arrow animate-bounce text-white fill-current"
@@ -141,11 +157,14 @@ import Arrow from '~/assets/svg/Arrow.svg?inline'
 import Title from '~/assets/svg/Title.svg?inline'
 import Ladder from '~/assets/svg/Ladder.svg?inline'
 import Rope1 from '~/assets/svg/Rope1.svg?inline'
+import Rope2 from '~/assets/svg/Rope2.svg?inline'
+import Rope3 from '~/assets/svg/Rope3.svg?inline'
+import Rope4 from '~/assets/svg/Rope4.svg?inline'
 
 import { debounce } from '~/utils'
 
 export default Vue.extend({
-  components: { Arrow, Title, Ladder, Rope1 },
+  components: { Arrow, Title, Ladder, Rope1, Rope2, Rope3, Rope4 },
   data() {
     return {
       navOpen: false,
@@ -211,7 +230,42 @@ export default Vue.extend({
   position: absolute;
   left: 77%;
   height: 100vh;
-  bottom: 10%;
+  top: -40px;
+}
+
+.rope1 {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 600px;
+}
+
+.rope2 {
+  position: absolute;
+  top: 0;
+  left: -70px;
+  width: 680px;
+}
+
+.rope3 {
+  position: absolute;
+  top: -70px;
+  left: -70px;
+  width: 700px;
+}
+
+.rope4 {
+  position: absolute;
+  top: 50%;
+  width: 1800px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -300px;
+  margin-left: 50px;
+
+  @screen md {
+    margin-top: -200px;
+  }
 }
 
 .arrow {

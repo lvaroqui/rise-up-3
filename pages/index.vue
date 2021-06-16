@@ -1,8 +1,8 @@
 <template>
   <div class="bg-navy-blue">
     <!-- Nav -->
-    <div class="fixed w-full md:hidden z-10">
-      <div class="bg-navy-blue-darker bg-opacity-90 text-white flex">
+    <div class="fixed w-full md:hidden z-20">
+      <div class="bg-navy-blue-darker bg-opacity-90 text-white flex z-20">
         <div
           class="py-3 ml-3 nav-burger"
           :class="{ 'nav-active': navOpen }"
@@ -29,7 +29,7 @@
       </div>
     </div>
     <div
-      class="hidden md:block text-xl fixed h-full text-center bg-navy-blue-darker text-blue bg-opacity-75 w-16 z-10"
+      class="hidden md:block text-xl fixed h-full text-center bg-navy-blue-darker text-blue bg-opacity-75 w-16 z-20"
     >
       <a
         v-for="(entry, index) in navEntries"
@@ -47,40 +47,50 @@
     <!-- End Nav -->
 
     <div id="home" ref="home" class="min-h-screen">
-      <div class="flex flex-col h-screen md:ml-16">
-        <div class="flex-grow" />
-        <div class="max-w-3xl mx-auto mb-6">
-          <Title />
+      <div class="relative w-full h-screen overflow-hidden">
+        <div class="flex flex-col h-screen md:ml-16 relative z-10">
+          <div class="flex-grow" />
+          <div class="flex flex-row justify-center items-center flex-wrap mb-4">
+            <div class="flex justify-center items-center mr-4 md:mr-6">
+              <div class="text-white md:text-xl myShadow">
+                Une comédie musicale
+              </div>
+            </div>
+            <img src="~/assets/img/riseup.png" class="w-32" />
+          </div>
+          <div class="max-w-3xl mx-auto mb-6">
+            <Title class="myShadow" />
+          </div>
+          <div class="max-w-3xl mx-auto text-white text-center text-sh">
+            <p class="text-xl md:text-3xl font-serif my-3 myShadow">
+              Les 17 et 18 septembre 2021 à 20h
+            </p>
+            <p class="text-2xl md:text-4xl font-serif my-3 myShadow">
+              Au Théatre André Malraux
+            </p>
+          </div>
+          <div class="flex-grow" />
         </div>
-        <div class="max-w-3xl mx-auto text-white text-center">
-          <p class="text-2xl md:text-3xl font-serif my-3">
-            Les 17 et 18 septembre 2021 à 20h
-          </p>
-          <p class="text-2xl md:text-4xl font-serif my-3">
-            Au Théatre André Malraux
-          </p>
+        <div class="ladder opacity-0 xl:opacity-100">
+          <Ladder class="h-full myShadow" />
         </div>
-        <div class="flex-grow" />
+        <div class="rope1">
+          <Rope1 class="h-full myShadow" />
+        </div>
+        <div class="rope2">
+          <Rope2 class="h-full myShadow" />
+        </div>
+        <div class="rope3">
+          <Rope3 class="h-full myShadow" />
+        </div>
+        <div class="rope4">
+          <Rope4 class="h-full myShadow" />
+        </div>
+        <Arrow
+          class="arrow animate-bounce text-white fill-current myShadow"
+          width="100px"
+        />
       </div>
-      <div class="ladder opacity-0 lg:opacity-100">
-        <Ladder class="h-full" />
-      </div>
-      <div class="rope1">
-        <Rope1 class="h-full" />
-      </div>
-      <div class="rope2">
-        <Rope2 class="h-full" />
-      </div>
-      <div class="rope3">
-        <Rope3 class="h-full" />
-      </div>
-      <div class="rope4">
-        <Rope4 class="h-full" />
-      </div>
-      <Arrow
-        class="arrow animate-bounce text-white fill-current"
-        width="100px"
-      />
     </div>
 
     <div class="min-h-screen pb-16 pl-0 md:pl-16">
@@ -114,7 +124,7 @@
         </p>
       </div>
       <div id="asso" ref="asso" class="pt-16">
-        <div class="bg-coral h-64"></div>
+        <!-- <div class="bg-coral h-64"></div> -->
         <div class="px-8 md:px-16 pt-16 ml-auto mr-0 max-w-4xl">
           <h1 class="font-serif text-sand text-4xl md:text-5xl mr-4 text-right">
             L'équipe
@@ -226,6 +236,10 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss" scoped>
+.myShadow {
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+}
+
 .ladder {
   position: absolute;
   left: 77%;
@@ -235,23 +249,38 @@ export default Vue.extend({
 
 .rope1 {
   position: absolute;
-  top: -50px;
   left: 0;
   width: 600px;
+
+  top: -200px;
+  @screen 2xl {
+    top: -50px;
+  }
 }
 
 .rope2 {
   position: absolute;
-  top: 0;
   left: -70px;
   width: 680px;
+
+  top: -150px;
+  @screen 2xl {
+    top: 0;
+  }
 }
 
 .rope3 {
   position: absolute;
-  top: -70px;
   left: -70px;
   width: 700px;
+
+  top: -270px;
+  @screen md {
+    top: -220px;
+  }
+  @screen 2xl {
+    top: -70px;
+  }
 }
 
 .rope4 {
@@ -274,6 +303,7 @@ export default Vue.extend({
   margin-right: auto;
   left: 0;
   right: 0;
+
   bottom: 0.5em;
 }
 

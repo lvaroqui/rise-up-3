@@ -46,6 +46,15 @@
     </div>
     <!-- End Nav -->
 
+    <!-- Ticket -->
+    <a
+      href="https://tam.notre-billetterie.fr/billets?kld=2122&spec=1771"
+      class="fixed bottom-10 right-10 bg-teal px-6 py-2 flex justify-center items-center z-30 rounded-md bg-opacity-50"
+    >
+      <div class="mr-4 text-2xl text-white">Billetterie</div>
+      <img src="~/assets/img/ticket.png" class="w-12" />
+    </a>
+
     <div id="home" ref="home" class="min-h-screen">
       <div class="relative w-full h-screen overflow-hidden">
         <div class="flex flex-col h-screen md:ml-16 relative z-10">

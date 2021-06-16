@@ -158,6 +158,7 @@
           Nos sponsors
         </h1>
         <div class="flex flex-wrap justify-around items-center my-16">
+          <img src="~/assets/img/tam.png" class="w-64 my-4" />
           <img src="~/assets/img/crous-de-paris.png" class="w-64 my-4" />
           <img src="~/assets/img/agroparistech.jpg" class="w-64 my-4" />
           <img src="~/assets/img/paris-saclay.png" class="w-64 my-4" />

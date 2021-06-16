@@ -52,8 +52,9 @@
           <div class="flex-grow" />
           <div class="flex flex-row justify-center items-center flex-wrap mb-4">
             <div class="flex justify-center items-center mr-4 md:mr-6">
-              <div class="text-white md:text-xl myShadow">
-                Une comédie musicale
+              <div class="text-white md:text-xl myShadow text-right">
+                Une comédie musicale <br />
+                originale de
               </div>
             </div>
             <img src="~/assets/img/riseup.png" class="w-32" />
@@ -152,6 +153,17 @@
           </p>
         </div>
       </div>
+      <div id="sponsor" ref="sponsor" class="pt-16 px-8 md:px-16 ml-0 mb-48">
+        <h1 class="font-serif text-sand text-4xl md:text-5xl ml-4">
+          Nos sponsors
+        </h1>
+        <div class="flex flex-wrap justify-around items-center my-16">
+          <img src="~/assets/img/crous-de-paris.png" class="w-64 my-4" />
+          <img src="~/assets/img/agroparistech.jpg" class="w-64 my-4" />
+          <img src="~/assets/img/paris-saclay.png" class="w-64 my-4" />
+          <img src="~/assets/img/cvec.png" class="w-64 my-4" />
+        </div>
+      </div>
     </div>
     <div class="pl-0 md:pl-16 mt-16 bg-navy-blue-darker text-white">
       <div class="container mx-auto text-center py-10">
@@ -182,6 +194,7 @@ export default Vue.extend({
         { text: 'Accueil', href: '#home', active: false },
         { text: "L'Histoire", href: '#histoire', active: false },
         { text: "L'asso", href: '#asso', active: false },
+        { text: 'Sponsors', href: '#sponsor', active: false },
       ],
       observer: null as IntersectionObserver | null,
     }
@@ -217,6 +230,7 @@ export default Vue.extend({
         this.$refs.home as Element,
         this.$refs.histoire as Element,
         this.$refs.asso as Element,
+        this.$refs.sponsor as Element,
       ]
       if (this.observer) {
         observed.forEach((elem) => {

@@ -166,12 +166,34 @@
         <h1 class="font-serif text-sand text-4xl md:text-5xl ml-4">
           Nos sponsors
         </h1>
-        <div class="flex flex-wrap justify-around items-center my-16">
-          <img src="~/assets/img/tam.png" class="w-64 my-4" />
-          <img src="~/assets/img/crous-de-paris.png" class="w-64 my-4" />
-          <img src="~/assets/img/agroparistech.jpg" class="w-64 my-4" />
-          <img src="~/assets/img/paris-saclay.png" class="w-64 my-4" />
-          <img src="~/assets/img/cvec.png" class="w-64 my-4" />
+        <p class="text-white font-sans my-6 text-center">
+          Rise Up remercie le théatre André Malraux et tout ses techniciens.
+        </p>
+        <div class="flex flex-wrap justify-around items-center">
+          <div class="logo">
+            <img src="~/assets/img/tam.png" />
+          </div>
+          <div class="logo">
+            <img src="~/assets/img/crous-de-paris.png" />
+          </div>
+          <div class="logo">
+            <img src="~/assets/img/agroparistech.jpg" />
+          </div>
+          <div class="logo">
+            <img src="~/assets/img/paris-saclay.png" />
+          </div>
+          <div class="logo">
+            <img src="~/assets/img/cvec.png" />
+          </div>
+          <div class="logo">
+            <img src="~/assets/img/j2b.png" />
+          </div>
+          <div class="logo">
+            <img src="~/assets/img/lbn.png" />
+          </div>
+          <div class="logo">
+            <img src="~/assets/img/ey.png" />
+          </div>
         </div>
       </div>
     </div>
@@ -354,5 +376,9 @@ export default Vue.extend({
   border: white 1px;
   border-radius: 3px;
   transition: all 0.3s ease;
+}
+
+.logo {
+  @apply w-64 h-64 bg-white flex items-center p-6 m-6 shadow-lg;
 }
 </style>

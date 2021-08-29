@@ -11,7 +11,7 @@
           <div class="wrapper">
             <iframe
               class="video"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              src="https://www.youtube.com/embed/QyZK3Q_Xqkw"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -19,6 +19,11 @@
             ></iframe>
           </div>
         </div>
+      </div>
+      <div>
+        <nuxt-link to="/" tag="h1" class="text-white text-center cursor-pointer hover:underline">
+          Découvrir le spectable
+        </nuxt-link>
       </div>
     </div>
   </div>
